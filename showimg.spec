@@ -16,6 +16,7 @@ BuildRequires:	fam-devel
 BuildRequires:	kdebase-devel >= 3.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libkexif-devel >= 0.2
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
