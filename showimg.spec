@@ -1,13 +1,14 @@
 Summary:	Feature-rich image viewer, written for KDE 3.x
 Summary(pl):	Bogata w mo¿liwo¶ci przegl±darka plików graficznych dla KDE 3.x
 Name:		showimg
-Version:	0.8.0
+Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	15cc19daaa13c3811335cb857bb0ce48
+# Source0-md5:	68444224f8b2c44766a89116e62d554b
 URL:		http://www.jalix.org/projects/showimg/
+BuildRequires:  digikam-devel
 BuildRequires:	fam-devel
 BuildRequires:	kdebase-devel >= 3.0
 BuildRequires:  libart_lgpl-devel
@@ -37,10 +38,11 @@ skompresowanych archiwach.
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
+# kde_icondir="%{_pixmapsdir}"; export kde_icondir
+# kde_appsdir="%{_applnkdir}"; export kde_appsdir
 
-%configure
+%configure \
+    --enable-digiKam-plugin
 %{__make}
 
 %install
@@ -48,6 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/%{_desktopdir}/kde/
+mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT/%{_desktopdir}/kde/
 
 %find_lang %{name} --with-kde
 
@@ -57,9 +61,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
-%{_datadir}/apps/%{name}
-%{_datadir}/apps/konqueror/servicemenus/konqshowimg.desktop
 %{_mandir}/man1/showimg.1*
-%{_applnkdir}/Graphics/%{name}.desktop
-%{_pixmapsdir}/*/*/apps/*
-%{_pixmapsdir}/*/*/actions/*
+%{_desktopdir}/kde/*desktop
+
+%{_datadir}/mimelnk/image/*.desktop
+%{_datadir}/apps/konqueror/servicemenus/*.desktop
+
+%dir %{_datadir}/apps/%{name}
+%{_datadir}/apps/%{name}/*/*/*/*/*.png
+%{_datadir}/apps/%{name}/pics/*.png
+%{_datadir}/apps/%{name}/convert2png.pl
+%{_datadir}/apps/%{name}/*.rc
+%{_iconsdir}/hicolor/*/apps/*.png 
