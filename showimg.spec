@@ -37,6 +37,7 @@ skompresowanych archiwach.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub admin
 %configure \
     --enable-digiKam-plugin
 %{__make}
