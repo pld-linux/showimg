@@ -1,18 +1,21 @@
 Summary:	Feature-rich image viewer, written for KDE 3.x
 Summary(pl):	Bogata w mo¿liwo¶ci przegl±darka plików graficznych dla KDE 3.x
 Name:		showimg
-Version:	0.9.3
-Release:	1
+%define	ver	0.9.4-1
+%define	rver	%(echo %{ver} | tr - .)
+Version:	%{rver}
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	8d9a579f929ea89f0a5ba1ec327acd70
+Source0:	http://www.jalix.org/projects/%{name}/download/%{ver}/%{name}-%{ver}.tar.bz2
+# Source0-md5:	d6cebe9a627aaa4f0ec57e95f403d5fa
 URL:		http://www.jalix.org/projects/showimg/
 BuildRequires:	automake
 BuildRequires:	digikam-devel
 BuildRequires:	fam-devel
 BuildRequires:	kdebase-devel >= 3.0
 BuildRequires:	libart_lgpl-devel
+BuildRequires:	libkexif-devel >= 0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -35,7 +38,7 @@ powiêkszanie, sortowanie, operacje drag'n'drop i podgl±d obrazków w
 skompresowanych archiwach.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{ver}
 
 %build
 cp -f /usr/share/automake/config.sub admin
