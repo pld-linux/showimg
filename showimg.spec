@@ -8,10 +8,10 @@ Group:		X11/Applications
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	68444224f8b2c44766a89116e62d554b
 URL:		http://www.jalix.org/projects/showimg/
-BuildRequires:  digikam-devel
+BuildRequires:	digikam-devel
 BuildRequires:	fam-devel
 BuildRequires:	kdebase-devel >= 3.0
-BuildRequires:  libart_lgpl-devel
+BuildRequires:	libart_lgpl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -39,7 +39,7 @@ skompresowanych archiwach.
 %build
 cp -f /usr/share/automake/config.sub admin
 %configure \
-    --enable-digiKam-plugin
+	--enable-digiKam-plugin
 %{__make}
 
 %install
