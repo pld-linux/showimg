@@ -8,6 +8,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	15cc19daaa13c3811335cb857bb0ce48
 
 URL:		http://www.jalix.org/projects/showimg/
 # BuildRequires:	autoconf >= 2.54
