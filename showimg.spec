@@ -2,7 +2,7 @@ Summary:	Feature-rich image viewer, written for KDE 3.x
 Summary(pl):	Bogata w mo¿liwo¶ci przegl±darka plików graficznych dla KDE 3.x
 Name:		showimg
 Version:	0.9.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
-echo 'Categories=Viewer;' >> $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
+echo 'Categories=Qt;KDE;Graphics;Viewer;' >> $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
 
 %find_lang %{name} --with-kde
 
