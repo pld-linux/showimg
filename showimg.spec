@@ -2,7 +2,7 @@ Summary:	Feature-rich image viewer, written for KDE 3.x
 Summary(pl):	Bogata w mo¿liwo¶ci przegl±darka plików graficznych dla KDE 3.x
 Name:		showimg
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
@@ -37,7 +37,6 @@ skompresowanych archiwach.
 %setup -q
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
 %configure \
     --enable-digiKam-plugin
 %{__make}
@@ -46,9 +45,12 @@ kde_htmldir="%{_htmldir}"; export kde_htmldir
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	'kde_htmldir=%{_kdedocdir}'
+
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
+echo 'Categories=Viewer' >> $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
 
 %find_lang %{name} --with-kde
 
@@ -62,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/image/*.desktop
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
 %{_mandir}/man1/showimg.1*
-%{_desktopdir}/kde/*desktop
+%{_desktopdir}/kde/*.desktop
 %{_iconsdir}/hicolor/*/apps/*.png 
