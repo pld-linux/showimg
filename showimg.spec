@@ -38,9 +38,6 @@ skompresowanych archiwach.
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-# kde_icondir="%{_pixmapsdir}"; export kde_icondir
-# kde_appsdir="%{_applnkdir}"; export kde_appsdir
-
 %configure \
     --enable-digiKam-plugin
 %{__make}
@@ -50,8 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_desktopdir}/kde/
-mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT/%{_desktopdir}/kde/
+install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
+mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 %find_lang %{name} --with-kde
 
@@ -61,15 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
-%{_mandir}/man1/showimg.1*
-%{_desktopdir}/kde/*desktop
-
+%{_datadir}/apps/%{name}
 %{_datadir}/mimelnk/image/*.desktop
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
-
-%dir %{_datadir}/apps/%{name}
-%{_datadir}/apps/%{name}/*/*/*/*/*.png
-%{_datadir}/apps/%{name}/pics/*.png
-%{_datadir}/apps/%{name}/convert2png.pl
-%{_datadir}/apps/%{name}/*.rc
+%{_mandir}/man1/showimg.1*
+%{_desktopdir}/kde/*desktop
 %{_iconsdir}/hicolor/*/apps/*.png 
