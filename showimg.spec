@@ -1,12 +1,12 @@
 Summary:	Feature-rich image viewer, written for KDE 3.x
 Summary(pl):	Bogata w mo¿liwo¶ci przegl±darka plików graficznych dla KDE 3.x
 Name:		showimg
-Version:	0.9.2
-Release:	3
+Version:	0.9.3
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	4f20944114d0f1f6e4d6588578ac823b
+# Source0-md5:	8d9a579f929ea89f0a5ba1ec327acd70
 URL:		http://www.jalix.org/projects/showimg/
 BuildRequires:	automake
 BuildRequires:	digikam-devel
@@ -41,7 +41,9 @@ skompresowanych archiwach.
 cp -f /usr/share/automake/config.sub admin
 %configure \
 	--enable-digiKam-plugin \
-	--with-qt-libraries=%{_libdir}
+	--with-qt-libraries=%{_libdir} \
+	--enable-final \
+	--disable-debug
 %{__make}
 
 %install
