@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	4f20944114d0f1f6e4d6588578ac823b
 URL:		http://www.jalix.org/projects/showimg/
+BuildRequires:	automake
 BuildRequires:	digikam-devel
 BuildRequires:	fam-devel
 BuildRequires:	kdebase-devel >= 3.0
@@ -51,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
-echo 'Categories=Viewer' >> $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
+echo 'Categories=Viewer;' >> $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
 
 %find_lang %{name} --with-kde
 
