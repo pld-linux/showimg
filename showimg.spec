@@ -40,7 +40,8 @@ skompresowanych archiwach.
 %build
 cp -f /usr/share/automake/config.sub admin
 %configure \
-	--enable-digiKam-plugin
+	--enable-digiKam-plugin \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
