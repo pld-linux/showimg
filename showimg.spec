@@ -4,7 +4,7 @@ Name:		showimg
 Version:	0.9.2
 Release:	1
 License:	GPL
-Group:		X11/Applications
+Group:		X11/Applications/Graphics
 Source0:	http://www.jalix.org/projects/%{name}/download/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	4f20944114d0f1f6e4d6588578ac823b
 URL:		http://www.jalix.org/projects/showimg/
