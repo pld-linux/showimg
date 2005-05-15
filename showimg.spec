@@ -9,6 +9,7 @@ License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.jalix.org/projects/%{name}/download/%{ver}/%{name}-%{ver}.tar.bz2
 # Source0-md5:	d6cebe9a627aaa4f0ec57e95f403d5fa
+Source1:	%{name}.desktop
 URL:		http://www.jalix.org/projects/showimg/
 BuildRequires:	automake
 BuildRequires:	digikam-devel
@@ -58,8 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 	kde_htmldir=%{_kdedocdir}
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
-mv $RPM_BUILD_ROOT/usr/share/applnk/Graphics/*.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde
-echo 'Categories=Qt;KDE;Graphics;Viewer;' >> $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/kde/%{name}.desktop
 
 %find_lang %{name} --with-kde
 
