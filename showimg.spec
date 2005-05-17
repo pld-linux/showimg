@@ -20,8 +20,6 @@ BuildRequires:	libkexif-devel >= 0.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_htmldir	/usr/share/doc/kde/HTML
-
 %description
 ShowImg is a feature-rich image viewer, written for KDE3.x, which can
 display numerous formats, including JPEG, PNG, GIF (animated) and MNG.
