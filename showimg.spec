@@ -1,5 +1,5 @@
 Summary:	Feature-rich image viewer, written for KDE 3.x
-Summary(pl):	Bogata w mo¿liwo¶ci przegl±darka plików graficznych dla KDE 3.x
+Summary(pl.UTF-8):   Bogata w moÅ¼liwoÅ›ci przeglÄ…darka plikÃ³w graficznych dla KDE 3.x
 Name:		showimg
 %define	ver	0.9.4-1
 %define	rver	%(echo %{ver} | tr - .)
@@ -30,13 +30,13 @@ for identical images. ShowImg also features a full-screen mode,
 zooming, sorting, drag'n'drop with Konqueror, and support for images
 in compressed archives (.zip).
 
-%description -l pl
-ShowImg jest bogat± w mo¿liwo¶ci przegl±dark± plików graficznych dla
-KDE 3.x która potrafi wy¶wietlaæ wiele formatów, w tym JPEG, PNG, GIF
-(animowany) i MNG. Posiada mo¿liwo¶æ drzewiastego przeszukiwania
-katalogów, podgl±d plików z wielu katalogów i potrafi wyszukiwaæ
-identyczne obrazki. Ponadto umo¿liwia prace w trybie pe³noekranowym,
-powiêkszanie, sortowanie, operacje drag'n'drop i podgl±d obrazków w
+%description -l pl.UTF-8
+ShowImg jest bogatÄ… w moÅ¼liwoÅ›ci przeglÄ…darkÄ… plikÃ³w graficznych dla
+KDE 3.x ktÃ³ra potrafi wyÅ›wietlaÄ‡ wiele formatÃ³w, w tym JPEG, PNG, GIF
+(animowany) i MNG. Posiada moÅ¼liwoÅ›Ä‡ drzewiastego przeszukiwania
+katalogÃ³w, podglÄ…d plikÃ³w z wielu katalogÃ³w i potrafi wyszukiwaÄ‡
+identyczne obrazki. Ponadto umoÅ¼liwia prace w trybie peÅ‚noekranowym,
+powiÄ™kszanie, sortowanie, operacje drag'n'drop i podglÄ…d obrazkÃ³w w
 skompresowanych archiwach.
 
 %prep
