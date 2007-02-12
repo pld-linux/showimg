@@ -1,5 +1,5 @@
 Summary:	Feature-rich image viewer, written for KDE 3.x
-Summary(pl.UTF-8):   Bogata w możliwości przeglądarka plików graficznych dla KDE 3.x
+Summary(pl.UTF-8):	Bogata w możliwości przeglądarka plików graficznych dla KDE 3.x
 Name:		showimg
 %define	ver	0.9.4-1
 %define	rver	%(echo %{ver} | tr - .)
