@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Comment=Feature-rich image viewer
 Comment[da]=Funktionsrig billedfremviser
 Comment[el]=Προβολέας εικόνων με πολλά χαρακτηριστικά
@@ -19,8 +18,8 @@ Comment[tr]=Zengin özellikli resim gösterici
 Comment[xx]=xxFeature-rich image viewerxx
 Comment[zh_CN]=多格式图像查看器
 Exec=showimg %f
-Icon=showimg.png
-MimeType=image/gif;image/x-xpm;image/x-xbm;image/jpeg;image/bmp;image/png;image/x-png;image/tiff;image/x-xcf;image/x-bmp;image/x-psd;image/x-eim;image/x-portable-bitmap;image/x-portable-pixmap;image/x-portable-anymap;image/x-portable-graymap;application/sia
+Icon=showimg
+MimeType=image/gif;image/x-xpm;image/x-xbm;image/jpeg;image/bmp;image;image/x-png;image/tiff;image/x-xcf;image/x-bmp;image/x-psd;image/x-eim;image/x-portable-bitmap;image/x-portable-pixmap;image/x-portable-anymap;image/x-portable-graymap;application/sia;
 Name=ShowImg
 Name[hi]=शो-आईएमजी
 Name[sv]=Showimg
