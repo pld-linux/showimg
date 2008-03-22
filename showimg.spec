@@ -39,14 +39,13 @@ skompresowanych archiwach.
 
 %prep
 %setup
-%patch0 -p1
+#%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
 %configure \
 	--enable-digiKam-plugin \
 	--with-qt-libraries=%{_libdir} \
-	--enable-final \
 	--disable-debug
 %{__make}
 
