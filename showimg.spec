@@ -17,6 +17,7 @@ BuildRequires:	automake
 BuildRequires:	digikam-devel
 BuildRequires:	fam-devel
 BuildRequires:	kdebase-devel >= 9:3.3
+BuildRequires:	kdelibs-shared >= 9:3.3
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libkexif-devel >= 0.2
 BuildRequires:	libkipi-devel
@@ -41,7 +42,7 @@ powiększanie, sortowanie, operacje drag'n'drop i podgląd obrazków w
 skompresowanych archiwach.
 
 %prep
-%setup
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
