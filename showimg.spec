@@ -12,6 +12,7 @@ Patch0:		kde-ac260.patch
 Patch1:		kde-ac260-lt.patch
 Patch2:		kde-am.patch
 URL:		http://www.jalix.org/projects/showimg/
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	digikam-devel
 BuildRequires:	fam-devel
