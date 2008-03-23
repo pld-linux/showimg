@@ -8,7 +8,9 @@ Group:		X11/Applications/Graphics
 Source0:	http://www.jalix.org/projects/showimg/download/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	281c5f5e65ca14c69810d2099c43a4b8
 Source1:	%{name}.desktop
-Patch0:		%{name}-qslider.patch
+Patch0:		kde-ac260.patch
+Patch1:		kde-ac260-lt.patch
+Patch2:		kde-am.patch
 URL:		http://www.jalix.org/projects/showimg/
 BuildRequires:	automake
 BuildRequires:	digikam-devel
@@ -39,10 +41,13 @@ skompresowanych archiwach.
 
 %prep
 %setup
-#%patch0 -p1
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
+%{__make} -f admin/Makefile.common cvs
 %configure \
 	--enable-digiKam-plugin \
 	--with-qt-libraries=%{_libdir} \
