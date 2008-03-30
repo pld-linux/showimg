@@ -1,0 +1,16 @@
+--- showimg/kexi/kexidb/Makefile.am	2006-01-07 09:47:47.000000000 +0100
++++ showimg/kexi/kexidb/Makefile.am-new	2008-03-30 16:13:13.187300595 +0200
+@@ -25,7 +25,7 @@
+ #  relationship.h parser/parser.h transaction.h \
+ #  kexidb_export.h
+ 
+-libshowimgkexidb_la_LIBADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO)
++libshowimgkexidb_la_LIBADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO) -L../kexiutils -lshowimgkexiutils
+ libshowimgkexidb_la_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ 
+ kde_servicetypes_DATA = showimg_kexidb_driver.desktop
+--- showimg/kexi/Makefile.am	2006-01-07 09:47:50.000000000 +0100
++++ showimg/kexi/Makefile.am-new	2008-03-30 16:16:29.443349422 +0200
+@@ -1 +1 @@
+-SUBDIRS= 3rdparty kexidb kexiutils
++SUBDIRS= 3rdparty kexiutils kexidb
