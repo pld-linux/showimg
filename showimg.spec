@@ -11,6 +11,7 @@ Source1:	%{name}.desktop
 Patch0:		kde-ac260.patch
 Patch1:		kde-ac260-lt.patch
 Patch2:		kde-am.patch
+Patch3:		%{name}-link.patch
 URL:		http://www.jalix.org/projects/showimg/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -46,6 +47,7 @@ skompresowanych archiwach.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p0
 
 %build
 cp -f /usr/share/automake/config.sub admin
