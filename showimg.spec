@@ -2,7 +2,7 @@ Summary:	Feature-rich image viewer, written for KDE 3.x
 Summary(pl.UTF-8):	Bogata w możliwości przeglądarka plików graficznych dla KDE 3.x
 Name:		showimg
 Version:	0.9.5
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.jalix.org/projects/showimg/download/%{version}/%{name}-%{version}.tar.bz2
@@ -42,6 +42,18 @@ identyczne obrazki. Ponadto umożliwia prace w trybie pełnoekranowym,
 powiększanie, sortowanie, operacje drag'n'drop i podgląd obrazków w
 skompresowanych archiwach.
 
+%package devel
+Summary:        Header files for showimg
+Summary(pl.UTF-8):      Pliki nagłówkowe showimg
+Group:          Development/Libraries
+Requires:      %{name} = %{version}-%{release}
+
+%description devel
+Header files for showimg.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe dla showimg.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -79,14 +91,33 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/sidbtest
 %attr(755,root,root) %{_libdir}/kde3/*.so
 %{_libdir}/kde3/*.la
-%attr(755,root,root) %{_libdir}/lib*.so.*
+%attr(755,root,root) %{_libdir}/libshowimgcore.so.*.*.*
+%attr(755,root,root) %{_libdir}/libshowimgkexidb.so.*.*.*
+%attr(755,root,root) %{_libdir}/libshowimgkexidbparser.so.*.*.*
+%attr(755,root,root) %{_libdir}/libshowimgkexisql2.*.*.*
+%attr(755,root,root) %{_libdir}/libshowimgkexisql3.*.*.*
+%attr(755,root,root) %{_libdir}/libshowimgkexiutils.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libshowimgcore.so.?
+%attr(755,root,root) %ghost %{_libdir}/libshowimgkexidb.so.?
+%attr(755,root,root) %ghost %{_libdir}/libshowimgkexidbparser.so.?
+%attr(755,root,root) %ghost %{_libdir}/libshowimgkexisql2.so.?
+%attr(755,root,root) %ghost %{_libdir}/libshowimgkexisql3.so.?
+%attr(755,root,root) %ghost %{_libdir}/libshowimgkexiutils.so.?
 %{_datadir}/apps/%{name}
 %{_datadir}/mimelnk/image/*.desktop
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
 %{_datadir}/apps/showimgpart
 %{_datadir}/services/*.desktop
-%{_mandir}/man1/showimg.1*
+#%{_mandir}/man1/showimg.1*
 %{_desktopdir}/kde/*.desktop
+%{_datadir}/applnk/Graphics/showimg.desktop
+%{_datadir}/servicetypes/showimg_kexidb_driver.desktop
 %{_iconsdir}/hicolor/*/apps/*.png
+
+%files devel
+%defattr(644,root,root,755)
+%{_libdir}/lib*.so
+%{_libdir}/lib*.la
